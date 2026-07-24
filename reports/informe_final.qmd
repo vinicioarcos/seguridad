@@ -1,0 +1,449 @@
+---
+title: "Seguridad y desempeño económico en Ecuador"
+subtitle: "Evidencia comparada con Colombia, Perú y Costa Rica"
+author:
+  - "Vinicio Arcos"
+date: last-modified
+lang: es
+bibliography: ../references/references.bib
+---
+
+::: {.callout-important}
+## Aviso de trazabilidad
+
+Las secciones marcadas **[BORRADOR IA — revisar]** fueron redactadas por un
+asistente de IA a partir estrictamente de los archivos ya aprobados por el
+equipo (`config/project_config.yaml`, `outputs/logs/validation_report.json`,
+`outputs/tables/summary.csv`, `outputs/tables/econometric_results.json`). No
+sustituyen la interpretación del equipo: deben editarse, corregirse y
+asumirse como propias antes de la entrega, conforme a `AGENTS.md`
+("ninguna salida de IA se acepta sin verificación humana registrada").
+Las secciones sin esa marca son transcripción directa de configuración ya
+aprobada o tablas generadas por los scripts del pipeline.
+:::
+
+# Resumen ejecutivo
+
+::: {.callout-note}
+**[BORRADOR IA — revisar]**
+
+Este estudio compara la evolución de los homicidios intencionales con tres
+indicadores de desempeño económico (crecimiento del PIB, formación bruta de
+capital fijo e inversión extranjera directa neta) en Ecuador, Colombia, Perú
+y Costa Rica entre 2014 y 2024, usando datos del Banco Mundial (World
+Development Indicators) verificados el 2026-07-24.
+
+Dos hechos descriptivos destacan. Primero, Ecuador registra la mayor
+volatilidad en su tasa de homicidios de los cuatro países: pasa de un mínimo
+de 5.79 a un máximo de 45.72 por 100.000 habitantes en el periodo, muy por
+encima de la dispersión observada en Colombia, Perú o Costa Rica. Segundo,
+Ecuador recibe en promedio 0.82% del PIB en IED neta durante 2014-2024,
+considerablemente menos que Colombia (3.98%), Costa Rica (5.23%) y Perú
+(2.78%); este hallazgo es puramente descriptivo y no se atribuye aquí a la
+inseguridad sin más evidencia.
+
+En el análisis econométrico exploratorio (OLS con efectos fijos de país,
+tendencia lineal y errores robustos HC1, n=38 por modelo), ninguna asociación
+entre homicidios y crecimiento del PIB o IED resultó estadísticamente
+significativa. La única asociación significativa (homicidios contemporáneos
+con formación de capital fijo, p=0.004) tiene signo positivo, contrario a la
+hipótesis H2; dado el tamaño reducido del panel y la posible tendencia común
+no causal, este resultado se reporta sin forzar una interpretación causal y
+requiere robustez adicional antes de usarse en conclusiones de política.
+:::
+
+# Introducción
+
+La seguridad incide potencialmente en costos empresariales, decisiones de
+inversión, movilidad, productividad y bienestar. Este estudio examina la
+evolución comparada de Ecuador, Colombia, Perú y Costa Rica sin asumir que una
+asociación estadística representa causalidad.
+
+# Planteamiento del problema
+
+El incremento de la violencia criminal en Ecuador puede elevar costos de
+operación, reducir inversión, alterar decisiones de localización y afectar el
+crecimiento; sin embargo, su evolución y asociación con indicadores
+económicos debe verificarse con datos comparables y sin atribuir causalidad
+automática.
+
+**Pregunta de investigación:** ¿Cómo se relaciona la evolución de la
+inseguridad con el crecimiento, la inversión y los flujos de inversión
+extranjera directa de Ecuador, en comparación con Colombia, Perú y Costa
+Rica, durante 2014–2024?
+
+**Objetivo general:** Analizar la relación entre inseguridad y desempeño
+económico de Ecuador en perspectiva comparada con Colombia, Perú y Costa Rica
+durante 2014–2024.
+
+*(Transcrito de la versión aprobada en `config/project_config.yaml`,
+`approve_design`, 2026-07-24.)*
+
+# Objetivos e hipótesis
+
+**Objetivos específicos:**
+
+1. Describir la evolución de la tasa de homicidios intencionales en los
+   cuatro países.
+2. Comparar crecimiento del PIB, formación bruta de capital e inversión
+   extranjera directa.
+3. Estimar asociaciones contemporáneas y rezagadas mediante modelos
+   exploratorios de panel.
+4. Identificar riesgos, oportunidades y limitaciones para la interpretación
+   del caso ecuatoriano.
+
+**Hipótesis:**
+
+- H1: mayores tasas de homicidio se asocian con menor crecimiento económico.
+- H2: mayores tasas de homicidio se asocian con menor formación de capital.
+- H3: mayores tasas de homicidio se asocian con menores entradas netas de
+  IED.
+
+**Alcance interpretativo declarado:** descriptivo y exploratorio, no causal.
+
+*(Transcrito de la versión aprobada en `config/project_config.yaml`; ver
+sección de Análisis econométrico para el contraste de cada hipótesis contra
+los resultados obtenidos.)*
+
+# Marco conceptual
+
+::: {.callout-warning}
+**[BORRADOR IA — revisar; pendiente de sustentar con literatura verificada]**
+
+`references/references.bib` está vacío por regla del proyecto ("no
+conservar citas generadas por IA sin DOI/URL comprobable"), así que esta
+sección no incluye citas todavía. El razonamiento económico general
+(sin atribución bibliográfica) sugiere tres canales por los que la
+inseguridad podría relacionarse con el desempeño económico: (i) un canal de
+costos directos (protección, pérdidas, primas de riesgo), (ii) un canal de
+incertidumbre que eleva la tasa de descuento de proyectos de inversión, y
+(iii) un canal de productividad (ausentismo, migración de talento,
+reasignación de recursos hacia seguridad). El equipo debe sustituir este
+párrafo por mecanismos respaldados en literatura académica verificada
+(criminología económica, economía del desarrollo, estudios de caso
+latinoamericanos) antes de la entrega, siguiendo el protocolo de
+`docs/fuentes.md`.
+:::
+
+# Contexto nacional
+
+::: {.callout-warning}
+**[BORRADOR IA — revisar; fuentes nacionales aún candidatas]**
+
+`config/sources.yaml` mantiene BCE, INEC y la fuente nacional de homicidios
+en estado `candidate` o `pending_identification` — ninguna fue verificada
+todavía (ver bitácora, tarea `identify_sources`, 2026-07-24). Por tanto, esta
+sección solo puede apoyarse en la serie de homicidios del Banco Mundial
+(fuente ya verificada): Ecuador pasa de 5.79 homicidios por 100.000
+habitantes en su año más bajo del periodo a 45.72 en el más alto,
+evolución consistente con la crisis de seguridad documentada públicamente en
+Ecuador desde 2021-2022. El equipo debe completar esta sección con series
+nacionales verificadas (BCE, INEC, Ministerio del Interior/Policía Nacional)
+una vez identificadas y validadas, siguiendo `docs/fuentes.md` y las reglas
+de `AGENTS.md` sobre distinguir "homicidio intencional", "muerte violenta" y
+"delitos denunciados".
+:::
+
+# Contexto global y comparado
+
+::: {.callout-note}
+**[BORRADOR IA — revisar]**
+
+Con los datos verificados del Banco Mundial (2014-2024), los cuatro países
+muestran perfiles distintos de seguridad y desempeño: Colombia mantiene la
+tasa de homicidios más alta y estable del grupo (media 25.29, desviación
+estándar 1.79 por 100.000), Costa Rica una tasa intermedia con tendencia
+creciente (media 12.24, máximo 17.75), Perú la más baja y estable de los
+países con datos completos hasta 2021 (media 7.44, aunque la serie está
+incompleta para 2022-2024), y Ecuador la trayectoria más volátil, partiendo
+del nivel más bajo del grupo y terminando cerca del más alto. En formación
+de capital fijo y crecimiento del PIB los cuatro países son comparables en
+magnitud; la diferencia más marcada está en IED neta, donde Ecuador atrae
+sistemáticamente menos que sus comparadores. El equipo debe enriquecer esta
+sección con diferencias institucionales (régimen cambiario, apertura
+comercial, marco regulatorio) respaldadas en fuentes verificadas.
+:::
+
+# Fuentes y metodología
+
+La metodología reproducible se encuentra en `docs/metodologia.md`. La única
+fuente verificada y utilizada por el pipeline automatizado es
+`world_bank_wdi` (Banco Mundial, World Development Indicators), verificada
+el 2026-07-24 para los cuatro indicadores del diseño aprobado. BCE, INEC y
+UNODC permanecen como fuentes candidatas/contextuales sin variables
+mapeadas; la fuente nacional específica de homicidios está pendiente de
+identificación (ver `config/sources.yaml` y `docs/bitacora_agentes.md`).
+
+Los valores faltantes no se imputan ni se convierten a cero: se reportan
+explícitamente como ausentes (ver sección de Procesamiento y validación).
+
+# Arquitectura multiagente
+
+El proceso siguió el grafo de tareas de `config/tasks.yaml`: aprobación del
+diseño → identificación y verificación de fuentes → descarga → limpieza →
+validación → cálculo de indicadores y estimación econométrica → construcción
+del dashboard → generación de este informe → auditoría. Cada tarea con
+`human_gate: true` fue aprobada explícitamente por el responsable humano
+(Vinicio Arcos) y queda registrada con fecha, entradas, salidas, errores y
+decisión en `docs/bitacora_agentes.md`. El detalle de agentes, capas y
+puertas humanas está en `docs/arquitectura_multiagente.md`.
+
+# Procesamiento y validación
+
+```{python}
+#| output: asis
+from pathlib import Path
+import json
+
+root = Path.cwd()
+if not (root / "config").exists():
+    root = root.parent
+validation_path = root / "outputs/logs/validation_report.json"
+
+if validation_path.exists():
+    validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    print(f"- **Estado del reporte:** `{validation['status']}`")
+    print(f"- **Filas:** {validation['rows']} de {validation['expected_rows']} esperadas")
+    print(f"- **Cobertura:** {validation['coverage']:.1%}")
+    print(f"- **Valores faltantes:** {validation['missing_values']}")
+    print(f"- **Filas en claves duplicadas:** {validation['duplicate_rows']}")
+    print(f"- **Errores críticos:** {len(validation['errors'])}")
+    if validation["warnings"]:
+        print("\n**Advertencias registradas:**\n")
+        for warning in validation["warnings"]:
+            print(f"- {warning}")
+    print(f"\n> {validation['decision']}")
+else:
+    print("_Validación pendiente de ejecutar (`python -m scripts.validate_data`)._")
+```
+
+Los seis valores faltantes corresponden a homicidios intencionales no
+publicados aún por el Banco Mundial para Colombia, Costa Rica y Ecuador
+(2024) y Perú (2022-2024); no fueron imputados, conforme a `AGENTS.md`.
+
+# Resultados descriptivos
+
+```{python}
+#| output: asis
+import pandas as pd
+import yaml
+
+summary_path = root / "outputs/tables/summary.csv"
+config_path = root / "config/project_config.yaml"
+
+if summary_path.exists() and config_path.exists():
+    summary = pd.read_csv(summary_path)
+    config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    design = config["research_design"]
+    labels = {item["code"]: item for item in design["indicators"]}
+    names = design["country_names"]
+
+    print("| País | Indicador | n | Media | Desv. estándar | Mínimo | Máximo | Unidad |")
+    print("|---|---|---|---|---|---|---|---|")
+    for row in summary.sort_values(["indicator_code", "country_code"]).itertuples(index=False):
+        definition = labels.get(row.indicator_code, {"label": row.indicator_code, "unit": ""})
+        country = names.get(row.country_code, row.country_code)
+        print(
+            f"| {country} | {definition['label']} | {row.count} | {row.mean:.2f} | "
+            f"{row.std:.2f} | {row.min:.2f} | {row.max:.2f} | {definition['unit']} |"
+        )
+else:
+    print("_Indicadores pendientes de calcular (`python -m scripts.calculate_indicators`)._")
+```
+
+::: {.callout-note}
+**[BORRADOR IA — revisar]**
+
+Tres lecturas descriptivas directas de la tabla: (1) Ecuador tiene la mayor
+desviación estándar en homicidios (13.18) de los cuatro países, reflejando el
+salto de un nivel bajo a uno muy alto dentro del mismo periodo, no una
+tendencia gradual; (2) los cuatro países son comparables en formación bruta
+de capital fijo (medias entre 17.7% y 21.8% del PIB); (3) Ecuador recibe en
+promedio menos de una cuarta parte de la IED (% del PIB) que Costa Rica y
+aproximadamente la quinta parte que Colombia. El equipo debe decidir si
+incorpora gráficos del dashboard (`dashboard/public/data/indicators.json`)
+como figuras adicionales en esta sección.
+:::
+
+# Análisis econométrico
+
+```{python}
+#| output: asis
+model_path = root / "outputs/tables/econometric_results.json"
+
+if model_path.exists():
+    models = json.loads(model_path.read_text(encoding="utf-8"))
+    print(f"**Método:** {models['method']}\n")
+    print("| Resultado | Exposición | n | R² | Coeficiente | Error est. (HC1) | p-valor | IC 95% |")
+    print("|---|---|---|---|---|---|---|---|")
+    outcome_labels = {
+        "gdp_growth": "Crecimiento del PIB",
+        "fixed_capital": "Formación de capital fijo",
+        "fdi_gdp": "IED neta",
+    }
+    exposure_labels = {
+        "homicide_rate": "Homicidios (contemporáneo)",
+        "homicide_lag1": "Homicidios (rezago 1 año)",
+    }
+    for model in models["models"]:
+        if model["status"] != "estimated_non_causal":
+            continue
+        ci_low, ci_high = model["confidence_interval_95"]
+        print(
+            f"| {outcome_labels.get(model['outcome'], model['outcome'])} | "
+            f"{exposure_labels.get(model['exposure'], model['exposure'])} | {model['n']} | "
+            f"{model['r_squared']:.3f} | {model['coefficient']:.4f} | {model['std_error_hc1']:.4f} | "
+            f"{model['p_value']:.3f} | [{ci_low:.3f}, {ci_high:.3f}] |"
+        )
+    print(
+        "\n> Todos los modelos son OLS agrupados con efectos fijos de país, tendencia lineal "
+        "y errores robustos HC1 (n=38). Ninguno identifica un efecto causal; el estatus "
+        f"`{models['models'][0]['status']}` se mantiene en todos los resultados reportados."
+    )
+    print("\n**Limitaciones declaradas por el modelo:**\n")
+    for limitation in models["limitations"]:
+        print(f"- {limitation}")
+else:
+    print("_Estimación pendiente de ejecutar (`python -m scripts.econometric_model`)._")
+```
+
+::: {.callout-warning}
+**[BORRADOR IA — revisar]**
+
+Contraste con las hipótesis del diseño aprobado:
+
+- **H1** (homicidios ↑ → crecimiento ↓): no se sostiene estadísticamente;
+  el coeficiente contemporáneo es positivo y no significativo (p=0.31), el
+  rezagado es negativo y tampoco significativo (p=0.38).
+- **H2** (homicidios ↑ → formación de capital ↓): el único resultado
+  significativo del estudio (p=0.004) tiene **signo contrario** al esperado
+  por H2. Con un panel de 4 países y 11 años, esta asociación positiva es
+  compatible con una tendencia temporal común no causal (ambas series
+  crecen con el tiempo en varios países) más que con un efecto directo;
+  se recomienda no usar este coeficiente para afirmaciones de política sin
+  pruebas de robustez adicionales (p. ej. excluir años atípicos, controlar
+  por otra variable macroeconómica).
+- **H3** (homicidios ↑ → IED ↓): no se sostiene estadísticamente; los
+  coeficientes son cercanos a cero y no significativos.
+
+En conjunto, la evidencia de este ejercicio exploratorio **no respalda**
+las hipótesis H1-H3 en la dirección esperada, con la excepción parcial y
+contraintuitiva de H2. Esto no implica que la inseguridad sea económicamente
+irrelevante para Ecuador; implica que un panel de 4 países y 11 años con
+regresión agrupada tiene poder limitado para detectarlo y que se requieren
+enfoques adicionales (series de mayor frecuencia, más países, otros
+indicadores de seguridad, métodos con mejor identificación causal).
+:::
+
+# Discusión
+
+::: {.callout-warning}
+**[BORRADOR IA — revisar; sin literatura verificada para contrastar]**
+
+Sin entradas verificadas en `references/references.bib`, esta sección no
+puede contrastar los resultados contra estudios previos todavía. El hallazgo
+más relevante a discutir por el equipo, con literatura real, es por qué la
+asociación entre homicidios y formación de capital fijo resulta positiva en
+este panel —posibles explicaciones a evaluar incluyen tendencia temporal
+compartida, inversión pública contracíclica en seguridad/infraestructura, o
+simplemente ruido estadístico dado el tamaño de muestra— y por qué, a pesar
+de la alta volatilidad de homicidios en Ecuador, no se observa una
+asociación significativa con crecimiento o IED en este periodo.
+:::
+
+# Riesgos y oportunidades para Ecuador
+
+::: {.callout-note}
+**[BORRADOR IA — revisar]**
+
+**Riesgo observado (dato, no proyección):** Ecuador exhibe la mayor
+volatilidad de homicidios del grupo y el nivel de IED más bajo en términos
+relativos; el estudio no establece que la primera cause la segunda, pero la
+combinación amerita seguimiento con datos más recientes y de mayor
+frecuencia que los disponibles en WDI (rezago de hasta un año).
+
+**Oportunidad metodológica:** la infraestructura reproducible de este
+proyecto (pipeline con puertas humanas, dashboard versionado, bitácora)
+permite actualizar el análisis cada vez que el Banco Mundial publique nuevos
+años, o incorporar la fuente nacional de homicidios una vez verificada, sin
+rehacer el diseño.
+
+El equipo debe reemplazar este borrador con una discusión de riesgos y
+oportunidades fundamentada en el contexto institucional ecuatoriano real.
+:::
+
+# Conclusiones
+
+::: {.callout-warning}
+**[BORRADOR IA — revisar y completar]**
+
+1. Ecuador registró, en el periodo 2014-2024, el mayor incremento relativo
+   de homicidios intencionales entre los cuatro países comparados,
+   pasando de niveles similares a Perú a niveles superiores a los de
+   Colombia.
+2. En el mismo periodo, Ecuador mantuvo sistemáticamente la menor
+   participación de IED neta en el PIB entre los cuatro países.
+3. El análisis de panel exploratorio (n=38 por modelo) no encontró
+   asociación estadísticamente significativa entre homicidios y
+   crecimiento del PIB o IED; encontró una asociación positiva y
+   significativa, contraria a la hipótesis, entre homicidios y formación de
+   capital fijo, que requiere más evidencia antes de interpretarse.
+4. Con la evidencia disponible, **no es posible afirmar** que la
+   inseguridad haya afectado causalmente el desempeño económico de
+   Ecuador en este periodo; tampoco puede descartarse, dado el poder
+   estadístico limitado del panel.
+
+[COMPLETAR: el equipo debe añadir las conclusiones sustantivas basadas en su
+propio análisis, discusión con literatura y criterio profesional.]
+:::
+
+# Recomendaciones
+
+::: {.callout-warning}
+**[BORRADOR IA — revisar y completar]**
+
+Recomendaciones metodológicas derivadas directamente del ejercicio (no de
+política pública, que requiere criterio del equipo):
+
+1. Verificar e incorporar la fuente nacional de homicidios
+   (`national_security_ecuador`, aún `pending_identification`) para
+   contrastar contra la serie del Banco Mundial y documentar diferencias de
+   definición (homicidio intencional vs. muerte violenta).
+2. Repetir la estimación excluyendo años atípicos (p. ej. 2020) como
+   análisis de sensibilidad, dado que la metodología (`docs/metodologia.md`)
+   ya lo contempla como pendiente.
+3. Ampliar el panel con más países o mayor frecuencia temporal si se busca
+   mejorar la potencia estadística del modelo.
+
+[COMPLETAR: el equipo debe añadir recomendaciones de política o gestión,
+si corresponde al alcance del curso, basadas en su propio juicio.]
+:::
+
+# Limitaciones
+
+- La tasa de homicidios aproxima solo una dimensión de la inseguridad.
+- Existen rezagos de publicación y posibles revisiones estadísticas (el año
+  2024 llega incompleto en homicidios para 3 de los 4 países).
+- Cuatro países y once años ofrecen potencia limitada para inferencia
+  (n=38 por modelo).
+- Las asociaciones estimadas no identifican por sí solas efectos causales;
+  existe riesgo de simultaneidad y variables omitidas.
+- BCE, INEC y UNODC permanecen sin verificar como fuentes activas; el
+  análisis depende en su totalidad de la fuente `world_bank_wdi`.
+
+*(Lista base transcrita de `config/project_config.yaml`, ampliada con los
+hallazgos de `validate_data` y `estimate_model`.)*
+
+# Referencias
+
+::: {#refs}
+:::
+
+# Anexos
+
+- Diccionario de datos: `docs/diccionario_datos.md`.
+- Registro de fuentes: `config/sources.yaml`, `docs/fuentes.md`.
+- Bitácora multiagente con evidencia completa de cada puerta humana:
+  `docs/bitacora_agentes.md`.
+- Reporte de validación: `outputs/logs/validation_report.json`.
+- Resultados econométricos completos: `outputs/tables/econometric_results.json`.

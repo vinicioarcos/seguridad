@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-07-24T18:22:38+00:00",
+  "method": "OLS pooled con efectos fijos de país, tendencia lineal y errores HC1",
+  "models": [
+    {
+      "outcome": "gdp_growth",
+      "exposure": "homicide_rate",
+      "status": "estimated_non_causal",
+      "formula": "gdp_growth ~ homicide_rate + year_centered + C(country_code)",
+      "n": 38,
+      "r_squared": 0.049398,
+      "coefficient": 0.131207,
+      "std_error_hc1": 0.130294,
+      "p_value": 0.313931,
+      "confidence_interval_95": [
+        -0.124164,
+        0.386578
+      ],
+      "interpretation_guardrail": "Asociación condicional exploratoria; no identifica efecto causal."
+    },
+    {
+      "outcome": "gdp_growth",
+      "exposure": "homicide_lag1",
+      "status": "estimated_non_causal",
+      "formula": "gdp_growth ~ homicide_lag1 + year_centered + C(country_code)",
+      "n": 38,
+      "r_squared": 0.048639,
+      "coefficient": -0.085943,
+      "std_error_hc1": 0.098162,
+      "p_value": 0.381289,
+      "confidence_interval_95": [
+        -0.278338,
+        0.106451
+      ],
+      "interpretation_guardrail": "Asociación condicional exploratoria; no identifica efecto causal."
+    },
+    {
+      "outcome": "fixed_capital",
+      "exposure": "homicide_rate",
+      "status": "estimated_non_causal",
+      "formula": "fixed_capital ~ homicide_rate + year_centered + C(country_code)",
+      "n": 38,
+      "r_squared": 0.819626,
+      "coefficient": 0.062223,
+      "std_error_hc1": 0.021726,
+      "p_value": 0.004183,
+      "confidence_interval_95": [
+        0.019641,
+        0.104805
+      ],
+      "interpretation_guardrail": "Asociación condicional exploratoria; no identifica efecto causal."
+    },
+    {
+      "outcome": "fixed_capital",
+      "exposure": "homicide_lag1",
+      "status": "estimated_non_causal",
+      "formula": "fixed_capital ~ homicide_lag1 + year_centered + C(country_code)",
+      "n": 38,
+      "r_squared": 0.730606,
+      "coefficient": 0.040655,
+      "std_error_hc1": 0.027074,
+      "p_value": 0.133198,
+      "confidence_interval_95": [
+        -0.01241,
+        0.09372
+      ],
+      "interpretation_guardrail": "Asociación condicional exploratoria; no identifica efecto causal."
+    },
+    {
+      "outcome": "fdi_gdp",
+      "exposure": "homicide_rate",
+      "status": "estimated_non_causal",
+      "formula": "fdi_gdp ~ homicide_rate + year_centered + C(country_code)",
+      "n": 38,
+      "r_squared": 0.794126,
+      "coefficient": -3e-06,
+      "std_error_hc1": 0.014796,
+      "p_value": 0.999864,
+      "confidence_interval_95": [
+        -0.029003,
+        0.028998
+      ],
+      "interpretation_guardrail": "Asociación condicional exploratoria; no identifica efecto causal."
+    },
+    {
+      "outcome": "fdi_gdp",
+      "exposure": "homicide_lag1",
+      "status": "estimated_non_causal",
+      "formula": "fdi_gdp ~ homicide_lag1 + year_centered + C(country_code)",
+      "n": 38,
+      "r_squared": 0.775277,
+      "coefficient": -0.010852,
+      "std_error_hc1": 0.011676,
+      "p_value": 0.35265,
+      "confidence_interval_95": [
+        -0.033736,
+        0.012032
+      ],
+      "interpretation_guardrail": "Asociación condicional exploratoria; no identifica efecto causal."
+    }
+  ],
+  "limitations": [
+    "Panel pequeño y potencialmente desbalanceado.",
+    "Posible simultaneidad y variables omitidas.",
+    "La tasa de homicidios no resume todas las dimensiones de seguridad."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "review_required",
+  "generated_at": "2026-07-24T18:20:07+00:00",
+  "rows": 176,
+  "expected_rows": 176,
+  "coverage": 0.9659,
+  "missing_values": 6,
+  "duplicate_rows": 0,
+  "errors": [],
+  "warnings": [
+    "6 valores faltantes; no fueron imputados."
+  ],
+  "decision": "Requiere aprobación humana incluso cuando no existan errores críticos."
+}

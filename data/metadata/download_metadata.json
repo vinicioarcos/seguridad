@@ -1,0 +1,23 @@
+{
+  "source_id": "world_bank_wdi",
+  "source_url": "https://api.worldbank.org/v2",
+  "retrieved_at": "2026-07-24T18:17:18+00:00",
+  "countries": [
+    "ECU",
+    "COL",
+    "PER",
+    "CRI"
+  ],
+  "period": [
+    2014,
+    2024
+  ],
+  "indicator_codes": [
+    "VC.IHR.PSRC.P5",
+    "NY.GDP.MKTP.KD.ZG",
+    "NE.GDI.FTOT.ZS",
+    "BX.KLT.DINV.WD.GD.ZS"
+  ],
+  "raw_file": "data/raw/world_bank.json",
+  "transformations": []
+}

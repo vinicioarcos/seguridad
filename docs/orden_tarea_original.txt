@@ -1,0 +1,901 @@
+Apertura: viernes, 10 de julio de 2026, 00:00
+Cierre: viernes, 24 de julio de 2026, 23:59
+ORDEN DE TAREA AUTÓNOMA
+Carrera: Economía
+Nivel: Octavo semestre
+Asignatura: Análisis del Contexto Nacional y Global
+Modalidad: Trabajo autónomo grupal
+Producto integrador: Proyecto multiagéntico para el análisis del contexto económico nacional y global
+Herramientas obligatorias: Visual Studio Code, GitHub, Vercel y generador de documentos PDF
+
+1. Título de la actividad
+Diseño e implementación de un sistema multiagéntico para el análisis del contexto económico nacional y global
+
+2. Objetivo de la actividad
+Desarrollar un proyecto tecnológico y analítico que permita recopilar, procesar, interpretar y visualizar información relacionada con el contexto económico nacional e internacional, mediante la implementación de una arquitectura multiagéntica y subagéntica.
+
+El proyecto deberá integrar análisis económico, gestión de datos, generación de indicadores, elaboración de conclusiones, visualización interactiva y presentación de resultados mediante un dashboard desplegado públicamente en Vercel.
+
+3. Descripción general
+Cada grupo deberá construir, gestionar y documentar un proyecto multiagéntico orientado al análisis del contexto nacional y global.
+
+El sistema deberá utilizar agentes especializados que trabajen de manera coordinada para:
+
+Buscar información económica confiable.
+
+Recopilar datos nacionales e internacionales.
+
+Verificar la calidad y actualidad de las fuentes.
+
+Procesar y analizar indicadores económicos.
+
+Comparar la situación de Ecuador con otros países o regiones.
+
+Identificar riesgos, oportunidades y tendencias.
+
+Generar gráficos, tablas y resultados interpretativos.
+
+Construir un dashboard web.
+
+Elaborar un informe académico en formato PDF.
+
+El proyecto deberá ser desarrollado y administrado desde una carpeta de trabajo abierta en Visual Studio Code. Todo el código, los datos, la documentación y los resultados deberán almacenarse en un repositorio de GitHub.
+
+4. Organización de los grupos
+La actividad se realizará en grupos de entre tres y cinco estudiantes.
+
+Cada integrante deberá participar en:
+
+La definición del problema económico.
+
+La búsqueda y validación de información.
+
+La programación del proyecto.
+
+La interpretación de resultados.
+
+La elaboración del dashboard.
+
+La redacción del informe.
+
+La documentación del repositorio.
+
+El historial de commits de GitHub será utilizado para verificar la participación de cada integrante.
+
+5. Tema de análisis
+Cada grupo deberá seleccionar un problema económico nacional que tenga relación directa con el contexto internacional.
+
+Temas sugeridos:
+
+Inflación nacional e internacional.
+
+Empleo, desempleo y calidad del empleo.
+
+Crecimiento económico y ciclos económicos.
+
+Deuda pública y riesgo país.
+
+Comercio exterior y balanza comercial.
+
+Exportaciones petroleras y no petroleras.
+
+Precio internacional del petróleo y economía ecuatoriana.
+
+Migración y remesas.
+
+Inversión extranjera directa.
+
+Pobreza, desigualdad y desarrollo humano.
+
+Competitividad y productividad.
+
+Seguridad y desempeño económico.
+
+Educación, capital humano y mercado laboral.
+
+Cambio climático y efectos económicos.
+
+Transformación digital y empleo.
+
+Política monetaria internacional y dolarización.
+
+Relaciones económicas entre Ecuador, Estados Unidos, China y la Unión Europea.
+
+El análisis deberá incluir obligatoriamente información de Ecuador y de al menos tres países, regiones o economías de referencia.
+
+6. Periodo de análisis
+Se recomienda utilizar información correspondiente a los últimos diez años disponibles.
+
+Cuando existan datos mensuales o trimestrales, se deberá trabajar con una cantidad suficiente de observaciones para identificar tendencias, cambios estructurales o fluctuaciones económicas.
+
+La fecha de consulta y actualización de cada fuente deberá quedar registrada.
+
+7. Arquitectura multiagéntica obligatoria
+El proyecto deberá contener un agente coordinador y, como mínimo, seis agentes especializados.
+
+7.1. Agente coordinador
+Responsable de:
+
+Interpretar el objetivo general del proyecto.
+
+Distribuir las tareas entre los demás agentes.
+
+Verificar que los resultados sean coherentes.
+
+Integrar los productos generados.
+
+Gestionar errores, duplicaciones o inconsistencias.
+
+Consolidar el análisis final.
+
+7.2. Agente de búsqueda de fuentes
+Responsable de localizar información en fuentes oficiales y académicas, como:
+
+Instituto Nacional de Estadística y Censos.
+
+Banco Central del Ecuador.
+
+Ministerio de Economía y Finanzas.
+
+Banco Mundial.
+
+Fondo Monetario Internacional.
+
+Comisión Económica para América Latina y el Caribe.
+
+Organización Internacional del Trabajo.
+
+Organización Mundial del Comercio.
+
+Bancos centrales y organismos estadísticos internacionales.
+
+Artículos científicos y documentos técnicos.
+
+7.3. Agente de recopilación de datos
+Responsable de:
+
+Descargar o importar bases de datos.
+
+Organizar los datos en formatos CSV, JSON, Excel o Parquet.
+
+Registrar el nombre de la variable, fuente, unidad de medida, periodicidad y fecha de actualización.
+
+Construir un diccionario de datos.
+
+7.4. Agente de validación
+Responsable de:
+
+Identificar valores faltantes.
+
+Detectar observaciones atípicas.
+
+Revisar duplicados.
+
+Verificar formatos de fechas.
+
+Comprobar unidades de medida.
+
+Comparar información entre fuentes.
+
+Evitar el uso de datos sin respaldo verificable.
+
+7.5. Agente de análisis económico
+Responsable de:
+
+Calcular indicadores.
+
+Analizar tendencias.
+
+Comparar países.
+
+Identificar relaciones entre variables.
+
+Interpretar cambios económicos.
+
+Relacionar los resultados con teorías y conceptos económicos.
+
+7.6. Agente econométrico o estadístico
+Responsable de aplicar, cuando corresponda:
+
+Estadística descriptiva.
+
+Tasas de variación.
+
+Números índice.
+
+Correlaciones.
+
+Regresión lineal.
+
+Series de tiempo.
+
+Indicadores de volatilidad.
+
+Comparaciones antes y después.
+
+Pronósticos básicos.
+
+Todo resultado econométrico deberá incluir interpretación económica y no únicamente resultados numéricos.
+
+7.7. Agente de visualización
+Responsable de:
+
+Diseñar gráficos claros y correctamente rotulados.
+
+Preparar tablas comparativas.
+
+Seleccionar visualizaciones adecuadas para cada indicador.
+
+Evitar gráficos engañosos o innecesarios.
+
+Integrar las visualizaciones en el dashboard.
+
+7.8. Agente redactor
+Responsable de:
+
+Generar el borrador del informe.
+
+Organizar los resultados.
+
+Redactar conclusiones y recomendaciones.
+
+Verificar coherencia, ortografía y formato académico.
+
+Generar el informe final en PDF.
+
+7.9. Agente auditor
+Responsable de revisar:
+
+La trazabilidad de las fuentes.
+
+La coherencia entre los datos, gráficos y conclusiones.
+
+El funcionamiento del dashboard.
+
+La estructura del repositorio.
+
+La existencia de todos los archivos solicitados.
+
+La correcta citación de fuentes.
+
+La ausencia de datos o referencias inventadas.
+
+Cada agente podrá utilizar subagentes para dividir tareas específicas. Por ejemplo, el agente de fuentes podrá utilizar un subagente para datos nacionales y otro para datos internacionales.
+
+8. Requisitos técnicos
+El proyecto deberá cumplir las siguientes condiciones:
+
+Ser desarrollado desde Visual Studio Code.
+
+Utilizar control de versiones con Git.
+
+Estar almacenado en un repositorio de GitHub.
+
+Contar con un dashboard web funcional.
+
+Estar desplegado en Vercel.
+
+Incluir un informe final en formato PDF.
+
+Contener instrucciones claras para reproducir el proyecto.
+
+No incluir contraseñas, claves privadas ni credenciales.
+
+Registrar las dependencias utilizadas.
+
+Presentar evidencia del trabajo multiagéntico y subagéntico.
+
+El grupo podrá utilizar Python, JavaScript, TypeScript o una combinación de estos lenguajes.
+
+Para el dashboard se recomienda utilizar alguna de las siguientes tecnologías:
+
+Next.js.
+
+React.
+
+Streamlit integrado mediante una arquitectura compatible con el despliegue.
+
+Dash.
+
+Plotly.
+
+ECharts.
+
+Recharts.
+
+D3.js.
+
+Debido a que el producto debe desplegarse en Vercel, se recomienda utilizar Next.js o React.
+
+9. Estructura mínima de la carpeta
+La carpeta principal del proyecto deberá tener una estructura similar a la siguiente:
+
+analisis-contexto-nacional-global/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .env.example
+├── package.json
+├── requirements.txt
+├── vercel.json
+│
+├── docs/
+│   ├── orden_tarea.md
+│   ├── arquitectura_multiagente.md
+│   ├── metodologia.md
+│   ├── fuentes.md
+│   ├── diccionario_datos.md
+│   ├── bitacora_agentes.md
+│   └── informe_final.pdf
+│
+├── agents/
+│   ├── coordinator.md
+│   ├── source_agent.md
+│   ├── data_agent.md
+│   ├── validation_agent.md
+│   ├── economic_analysis_agent.md
+│   ├── econometric_agent.md
+│   ├── visualization_agent.md
+│   ├── report_agent.md
+│   └── audit_agent.md
+│
+├── subagents/
+│   ├── national_data_subagent.md
+│   ├── international_data_subagent.md
+│   ├── literature_subagent.md
+│   ├── cleaning_subagent.md
+│   ├── charts_subagent.md
+│   └── references_subagent.md
+│
+├── prompts/
+│   ├── system_prompt.md
+│   ├── coordinator_prompt.md
+│   ├── analysis_prompt.md
+│   ├── validation_prompt.md
+│   └── report_prompt.md
+│
+├── config/
+│   ├── agents.yaml
+│   ├── tasks.yaml
+│   ├── sources.yaml
+│   └── project_config.yaml
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── metadata/
+│
+├── notebooks/
+│   ├── exploratory_analysis.ipynb
+│   └── econometric_analysis.ipynb
+│
+├── scripts/
+│   ├── download_data.py
+│   ├── clean_data.py
+│   ├── validate_data.py
+│   ├── calculate_indicators.py
+│   ├── econometric_model.py
+│   └── generate_report.py
+│
+├── dashboard/
+│   ├── app/
+│   ├── components/
+│   ├── public/
+│   ├── styles/
+│   └── lib/
+│
+├── outputs/
+│   ├── charts/
+│   ├── tables/
+│   ├── reports/
+│   └── logs/
+│
+└── tests/
+    ├── test_data.py
+    ├── test_indicators.py
+    └── test_dashboard.py
+La estructura podrá adaptarse según las tecnologías utilizadas, pero no se podrán eliminar los componentes esenciales de documentación, agentes, datos, scripts, dashboard, resultados y pruebas.
+
+10. Archivos obligatorios
+README.md
+Deberá incluir:
+
+Nombre del proyecto.
+
+Integrantes.
+
+Problema analizado.
+
+Objetivos.
+
+Arquitectura multiagéntica.
+
+Fuentes de datos.
+
+Tecnologías utilizadas.
+
+Instrucciones de instalación.
+
+Instrucciones de ejecución.
+
+Enlace al dashboard en Vercel.
+
+Enlace al informe PDF.
+
+Resultados principales.
+
+Limitaciones del análisis.
+
+LICENSE
+Deberá indicar la licencia seleccionada para el proyecto. Se recomienda MIT para el código.
+
+.gitignore
+Deberá excluir:
+
+Entornos virtuales.
+
+Archivos temporales.
+
+Dependencias locales.
+
+Credenciales.
+
+Archivos de configuración privada.
+
+Bases de datos excesivamente pesadas.
+
+.env.example
+Deberá contener únicamente los nombres de las variables de entorno necesarias, sin claves reales.
+
+Ejemplo:
+
+NEXT_PUBLIC_API_URL=
+DATABASE_URL=
+DATA_SOURCE_URL=
+requirements.txt o package.json
+Deberá registrar todas las librerías y dependencias necesarias para ejecutar el proyecto.
+
+agents.yaml
+Deberá definir los agentes, roles, objetivos y herramientas disponibles.
+
+Ejemplo:
+
+agents:
+  coordinator:
+    role: "Coordinador general"
+    goal: "Gestionar el flujo completo del análisis"
+    tools:
+      - task_manager
+      - file_reader
+      - report_validator
+
+  source_agent:
+    role: "Especialista en fuentes"
+    goal: "Localizar datos oficiales nacionales e internacionales"
+    tools:
+      - web_search
+      - api_reader
+      - source_registry
+tasks.yaml
+Deberá registrar las tareas y dependencias del proyecto.
+
+Ejemplo:
+
+tasks:
+  collect_data:
+    agent: data_agent
+    depends_on:
+      - identify_sources
+    output:
+      - data/raw
+
+  validate_data:
+    agent: validation_agent
+    depends_on:
+      - collect_data
+    output:
+      - data/processed
+
+  create_dashboard:
+    agent: visualization_agent
+    depends_on:
+      - economic_analysis
+    output:
+      - dashboard
+sources.yaml
+Deberá registrar:
+
+Nombre de la fuente.
+
+Institución.
+
+Enlace.
+
+Variable obtenida.
+
+Periodicidad.
+
+Fecha de consulta.
+
+Licencia o condiciones de uso.
+
+bitacora_agentes.md
+Deberá contener:
+
+Fecha.
+
+Agente responsable.
+
+Tarea ejecutada.
+
+Archivos utilizados.
+
+Resultado generado.
+
+Errores encontrados.
+
+Correcciones realizadas.
+
+Responsable humano que validó el resultado.
+
+11. Dashboard obligatorio
+El dashboard deberá ser funcional, público y estar desplegado en Vercel.
+
+Deberá incluir al menos:
+
+Portada y descripción del problema.
+
+Indicadores principales.
+
+Comparación de Ecuador con otros países.
+
+Evolución temporal de las variables.
+
+Gráficos interactivos.
+
+Filtros por año, país o indicador.
+
+Tabla de datos.
+
+Explicación económica de los resultados.
+
+Fuentes de información.
+
+Fecha de actualización.
+
+Conclusiones principales.
+
+Enlace al repositorio de GitHub.
+
+Enlace de descarga del informe PDF.
+
+No será suficiente mostrar gráficos. Cada sección deberá incorporar una interpretación económica.
+
+El dashboard deberá visualizarse correctamente en computadoras y dispositivos móviles.
+
+12. Repositorio de GitHub
+El repositorio deberá cumplir los siguientes requisitos:
+
+Ser público, salvo autorización distinta del docente.
+
+Tener un nombre relacionado con el tema.
+
+Contener todos los archivos del proyecto.
+
+Presentar commits frecuentes y descriptivos.
+
+Utilizar ramas cuando sea necesario.
+
+Contener al menos una versión estable publicada mediante Releases.
+
+No contener archivos con credenciales.
+
+No contener únicamente el producto final; deberá evidenciar el proceso de desarrollo.
+
+Ejemplos de mensajes de commit:
+
+feat: agregar agente de validación de datos
+data: incorporar indicadores del Banco Mundial
+fix: corregir cálculo de tasa de crecimiento
+docs: actualizar metodología del proyecto
+dashboard: agregar filtro por país
+report: incorporar conclusiones del análisis
+Cada integrante deberá realizar contribuciones identificables.
+
+13. Despliegue en Vercel
+El grupo deberá:
+
+Conectar el repositorio de GitHub con Vercel.
+
+Configurar correctamente el directorio del dashboard.
+
+Registrar las variables de entorno necesarias.
+
+Ejecutar el despliegue.
+
+Corregir errores de compilación.
+
+Verificar el funcionamiento de todas las páginas.
+
+Entregar la dirección pública del dashboard.
+
+No se considerará entregado un dashboard que funcione únicamente de manera local.
+
+14. Informe final en PDF
+El informe deberá tener una extensión aproximada de entre 12 y 20 páginas, sin contar anexos.
+
+Deberá contener:
+
+Portada.
+
+Resumen ejecutivo.
+
+Introducción.
+
+Planteamiento del problema.
+
+Objetivo general y objetivos específicos.
+
+Marco conceptual.
+
+Descripción del contexto nacional.
+
+Descripción del contexto global.
+
+Fuentes y metodología.
+
+Arquitectura multiagéntica.
+
+Descripción de los agentes y subagentes.
+
+Procesamiento de datos.
+
+Análisis estadístico o econométrico.
+
+Resultados.
+
+Discusión.
+
+Riesgos y oportunidades para Ecuador.
+
+Conclusiones.
+
+Recomendaciones.
+
+Limitaciones.
+
+Referencias bibliográficas.
+
+Anexos.
+
+El PDF deberá generarse preferentemente desde Markdown, Quarto, LaTeX, Python o una herramienta reproducible.
+
+No se aceptarán informes compuestos exclusivamente por texto generado mediante inteligencia artificial sin revisión, contraste de fuentes e interpretación de los estudiantes.
+
+15. Evidencia del funcionamiento multiagéntico
+El grupo deberá demostrar que el proyecto funciona mediante la coordinación de agentes y subagentes.
+
+La evidencia deberá incluir:
+
+Diagrama de la arquitectura.
+
+Archivos de configuración.
+
+Prompts utilizados.
+
+Registro de tareas.
+
+Bitácora de ejecución.
+
+Resultados producidos por cada agente.
+
+Errores detectados y correcciones.
+
+Validación humana.
+
+Ejemplo de una tarea completa desde la búsqueda de datos hasta la generación del gráfico o informe.
+
+No se considerará arquitectura multiagéntica la simple utilización de varias conversaciones independientes con una herramienta de inteligencia artificial.
+
+16. Fases de desarrollo
+Fase 1. Planificación
+Seleccionar el problema.
+
+Formular objetivos.
+
+Seleccionar países e indicadores.
+
+Diseñar la arquitectura multiagéntica.
+
+Crear el repositorio.
+
+Definir responsabilidades.
+
+Fase 2. Recopilación
+Buscar fuentes.
+
+Descargar datos.
+
+Registrar metadatos.
+
+Construir el diccionario de variables.
+
+Fase 3. Procesamiento
+Limpiar los datos.
+
+Homologar unidades.
+
+Tratar valores faltantes.
+
+Validar consistencia.
+
+Generar una base procesada.
+
+Fase 4. Análisis
+Calcular indicadores.
+
+Elaborar comparaciones.
+
+Aplicar técnicas estadísticas o econométricas.
+
+Interpretar resultados.
+
+Fase 5. Desarrollo del dashboard
+Diseñar la interfaz.
+
+Incorporar gráficos y tablas.
+
+Implementar filtros.
+
+Integrar interpretaciones.
+
+Verificar accesibilidad y visualización móvil.
+
+Fase 6. Informe
+Redactar el documento.
+
+Incorporar tablas y gráficos.
+
+Citar las fuentes.
+
+Generar el archivo PDF.
+
+Revisar coherencia y formato.
+
+Fase 7. Auditoría y despliegue
+Ejecutar pruebas.
+
+Revisar enlaces.
+
+Verificar datos.
+
+Desplegar en Vercel.
+
+Publicar la versión final en GitHub.
+
+17. Productos que se deben entregar
+Cada grupo deberá entregar:
+
+Enlace público al repositorio de GitHub.
+
+Enlace público al dashboard desplegado en Vercel.
+
+Informe final en formato PDF.
+
+Archivo comprimido de la carpeta completa del proyecto.
+
+Diagrama de la arquitectura multiagéntica.
+
+Bitácora de agentes y subagentes.
+
+Diccionario de datos.
+
+Base de datos procesada.
+
+Presentación breve de los resultados.
+
+Evidencia de participación de cada integrante.
+
+18. Criterios de evaluación
+La actividad será calificada sobre 10 puntos.
+
+Criterio	Puntaje
+Formulación del problema, objetivos y pertinencia económica	1,0
+Calidad, actualidad y trazabilidad de las fuentes	1,0
+Diseño de la arquitectura multiagéntica y subagéntica	1,5
+Procesamiento, validación y documentación de los datos	1,0
+Calidad del análisis económico, estadístico o econométrico	1,5
+Funcionamiento, diseño e interpretación del dashboard	1,5
+Repositorio de GitHub, organización y control de versiones	1,0
+Informe académico en formato PDF	1,0
+Despliegue funcional en Vercel	0,5
+Participación, defensa y dominio del proyecto	0,5
+Total	10,0
+19. Penalizaciones
+Se aplicarán penalizaciones en los siguientes casos:
+
+Enlace de Vercel no funcional.
+
+Repositorio vacío, incompleto o actualizado únicamente al final.
+
+Información sin fuentes verificables.
+
+Datos inventados o referencias inexistentes.
+
+Credenciales expuestas en GitHub.
+
+Gráficos sin títulos, unidades o fuentes.
+
+Resultados econométricos sin interpretación.
+
+Informe sin relación con el dashboard.
+
+Copia de proyectos de otros grupos.
+
+Falta de participación de uno o más integrantes.
+
+Uso de inteligencia artificial sin validación crítica.
+
+Ausencia de evidencia del funcionamiento multiagéntico.
+
+20. Lineamientos sobre el uso de inteligencia artificial
+La inteligencia artificial podrá utilizarse para:
+
+Estructurar el proyecto.
+
+Proponer código.
+
+Depurar errores.
+
+Diseñar agentes.
+
+Resumir documentos.
+
+Sugerir visualizaciones.
+
+Apoyar la redacción.
+
+Sin embargo, los estudiantes deberán:
+
+Verificar todas las fuentes.
+
+Revisar el código generado.
+
+Contrastar los resultados.
+
+Documentar los prompts utilizados.
+
+Identificar posibles errores o alucinaciones.
+
+Explicar las decisiones metodológicas.
+
+Asumir responsabilidad por el producto entregado.
+
+La frase “lo generó la inteligencia artificial” no será aceptada como justificación de errores. La IA ayuda; no rinde el examen por ustedes.
+
+21. Presentación y defensa
+Cada grupo deberá realizar una presentación en la que demuestre:
+
+El problema económico analizado.
+
+La arquitectura multiagéntica.
+
+El flujo de trabajo.
+
+El funcionamiento del dashboard.
+
+Los principales resultados.
+
+Las conclusiones.
+
+Las limitaciones.
+
+La participación de los integrantes.
+
+Durante la defensa, el docente podrá solicitar modificaciones de código, explicación de indicadores, revisión de fuentes o demostración de la ejecución de un agente.
+
+22. Resultado esperado
+Al finalizar la actividad, los estudiantes deberán disponer de un producto digital reproducible que combine análisis económico, ciencia de datos, inteligencia artificial, visualización, trabajo colaborativo y comunicación académica.
+
+El resultado deberá permitir que una persona externa consulte el dashboard, comprenda el problema analizado, revise las fuentes, acceda al código y descargue el informe sin necesidad de solicitar archivos adicionales al grupo.

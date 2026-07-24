@@ -3,10 +3,12 @@ project:
   course: "Análisis del Contexto Nacional y Global"
   program: "Economía"
   level: "Octavo semestre"
-  team: []
-  repository_url: ""
-  dashboard_url: ""
-  report_url: ""
+  team:
+    - name: "Vinicio Arcos"
+      github: "vinicioarcos"
+  repository_url: "https://github.com/vinicioarcos/seguridad"
+  dashboard_url: "https://seguridad-43upvuv9s-edwins-projects-f0f5d6e3.vercel.app"  # pendiente: desactivar Deployment Protection en Vercel (hoy exige login)
+  report_url: ""  # pendiente: publicar informe_final.pdf una vez completadas las secciones [BORRADOR IA]
 
 research_design:
   status: "approved"

@@ -1,0 +1,88 @@
+version: 1
+coordination:
+  coordinator: coordinator
+  log: docs/bitacora_agentes.md
+  machine_log: outputs/logs/agent_runs.jsonl
+  human_gate_required: true
+
+agents:
+  coordinator:
+    role: "Coordinador general"
+    contract: "agents/coordinator.md"
+    goal: "Gestionar dependencias, integrar entregables y detener flujos no verificables."
+    tools: [task_registry, file_reader, process_runner, audit_log]
+    delegates_to:
+      - source_agent
+      - data_agent
+      - validation_agent
+      - economic_analysis_agent
+      - econometric_agent
+      - visualization_agent
+      - report_agent
+      - audit_agent
+
+  source_agent:
+    role: "Especialista en fuentes"
+    contract: "agents/source_agent.md"
+    goal: "Localizar y documentar fuentes oficiales o académicas verificables."
+    tools: [web_search, source_registry]
+    subagents: [national_data_subagent, international_data_subagent, literature_subagent]
+
+  data_agent:
+    role: "Ingeniería de datos"
+    contract: "agents/data_agent.md"
+    goal: "Descargar, preservar y normalizar datos con metadatos completos."
+    tools: [api_reader, csv_writer, metadata_writer]
+
+  validation_agent:
+    role: "Validación de datos"
+    contract: "agents/validation_agent.md"
+    goal: "Detectar faltantes, duplicados, unidades inconsistentes y problemas de cobertura."
+    tools: [schema_validator, anomaly_detector, audit_log]
+    subagents: [cleaning_subagent]
+
+  economic_analysis_agent:
+    role: "Análisis económico"
+    contract: "agents/economic_analysis_agent.md"
+    goal: "Interpretar tendencias y comparaciones desde teoría económica y contexto institucional."
+    tools: [indicator_calculator, table_reader]
+
+  econometric_agent:
+    role: "Análisis estadístico y econométrico"
+    contract: "agents/econometric_agent.md"
+    goal: "Aplicar métodos compatibles con los datos, reportar supuestos y evitar causalidad espuria."
+    tools: [python, statsmodels, diagnostics]
+
+  visualization_agent:
+    role: "Visualización"
+    contract: "agents/visualization_agent.md"
+    goal: "Crear visualizaciones honestas, accesibles e interpretables."
+    tools: [recharts, dashboard_builder]
+    subagents: [charts_subagent]
+
+  report_agent:
+    role: "Redacción académica"
+    contract: "agents/report_agent.md"
+    goal: "Integrar evidencia verificada en un informe reproducible."
+    tools: [quarto, citation_checker]
+    subagents: [references_subagent]
+
+  audit_agent:
+    role: "Auditor independiente"
+    contract: "agents/audit_agent.md"
+    goal: "Bloquear entregables sin trazabilidad, consistencia, pruebas o validación humana."
+    tools: [project_auditor, test_runner, link_checker]
+
+subagents:
+  national_data_subagent:
+    contract: "subagents/national_data_subagent.md"
+  international_data_subagent:
+    contract: "subagents/international_data_subagent.md"
+  literature_subagent:
+    contract: "subagents/literature_subagent.md"
+  cleaning_subagent:
+    contract: "subagents/cleaning_subagent.md"
+  charts_subagent:
+    contract: "subagents/charts_subagent.md"
+  references_subagent:
+    contract: "subagents/references_subagent.md"

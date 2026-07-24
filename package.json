@@ -1,0 +1,11 @@
+{
+  "name": "analisis-contexto-nacional-global",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix dashboard run dev",
+    "build": "npm --prefix dashboard run build",
+    "lint": "npm --prefix dashboard run lint",
+    "test": "python -m pytest -q",
+    "audit:project": "python scripts/audit_project.py"
+  }
+}

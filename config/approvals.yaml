@@ -25,32 +25,61 @@ approvals:
     approved_at: null
     notes: ""
   validate_data:
-    status: "pending"
-    approved_by: null
-    approved_at: null
-    notes: ""
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      0 errores críticos, cobertura 96.6% (umbral 70%), 176/176 filas
+      esperadas, 0 duplicados. 6 valores faltantes en homicidios
+      (COL/CRI/ECU 2024, PER 2022-2024) por rezago de publicación del Banco
+      Mundial; no imputados, quedan como NaN/is_missing=True.
   calculate_indicators:
-    status: "pending"
-    approved_by: null
-    approved_at: null
-    notes: ""
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      dashboard/public/data/indicators.json y outputs/tables/summary.csv
+      trazables a world_bank_wdi, heredan cobertura 96.6% de validate_data,
+      sin imputación de faltantes.
   estimate_model:
-    status: "pending"
-    approved_by: null
-    approved_at: null
-    notes: ""
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      Aprobado incluyendo el resultado contraintuitivo (homicidios →
+      formación de capital, coef. +0.062, p=0.004): se mantiene con su
+      interpretation_guardrail ("no identifica efecto causal") y limitaciones
+      (panel pequeño, posible variable omitida/tendencia común). Se discutirá
+      explícitamente en el informe final sin forzar la hipótesis H2 original.
   build_dashboard:
-    status: "pending"
-    approved_by: null
-    approved_at: null
-    notes: ""
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      Build de producción exitoso (npm --prefix dashboard run build).
+      Verificado vía HTML servido (HTTP 200): selector de 4 indicadores,
+      fuente, fecha de actualización, tabla de última observación e
+      interpretación no causal presentes. Sin captura visual en navegador
+      real por falta de chromium-cli en este entorno.
   generate_report:
-    status: "pending"
-    approved_by: null
-    approved_at: null
-    notes: ""
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      Aprobado como borrador de trabajo (12 páginas), no como entrega final.
+      Pipeline técnico (Quarto + Typst, sin LaTeX) validado y reproducible
+      vía `python -m scripts.generate_report`. Secciones interpretativas
+      quedan marcadas "[BORRADOR IA — revisar]" y deben ser completadas,
+      corregidas y asumidas por el equipo antes de la entrega del curso.
   audit_release:
-    status: "pending"
-    approved_by: null
-    approved_at: null
-    notes: ""
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      outputs/logs/audit_report.json: status=approved, 0 errores, 0
+      advertencias. Archivos obligatorios presentes, sin marcadores de
+      plantilla pendientes en README.md/informe_final.qmd, sin credenciales
+      detectadas, world_bank_wdi verificada con fecha de consulta. Pendiente
+      fuera del alcance del auditor automático: desactivar Deployment
+      Protection en Vercel y completar secciones [BORRADOR IA] del informe
+      antes de una entrega final pública.

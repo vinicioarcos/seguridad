@@ -1,0 +1,81 @@
+version: 1
+tasks:
+  approve_design:
+    agent: coordinator
+    command: null
+    depends_on: []
+    outputs: [config/project_config.yaml]
+    acceptance: "Problema, pregunta, objetivo, países, periodo e indicadores aprobados."
+    human_gate: true
+
+  identify_sources:
+    agent: source_agent
+    command: null
+    depends_on: [approve_design]
+    outputs: [config/sources.yaml, docs/fuentes.md]
+    acceptance: "Cada variable tiene fuente, URL, unidad, periodicidad y fecha de consulta."
+    human_gate: true
+
+  collect_data:
+    agent: data_agent
+    command: "python -m scripts.download_data"
+    depends_on: [identify_sources]
+    outputs: [data/raw/world_bank.json, data/metadata/download_metadata.json]
+    acceptance: "Descarga original preservada y metadatos completos."
+    human_gate: false
+
+  clean_data:
+    agent: data_agent
+    command: "python -m scripts.clean_data"
+    depends_on: [collect_data]
+    outputs: [data/processed/indicators.csv]
+    acceptance: "Base larga normalizada; ninguna imputación silenciosa."
+    human_gate: false
+
+  validate_data:
+    agent: validation_agent
+    command: "python -m scripts.validate_data"
+    depends_on: [clean_data]
+    outputs: [outputs/logs/validation_report.json]
+    acceptance: "Reporte sin errores críticos o decisión humana documentada."
+    human_gate: true
+
+  calculate_indicators:
+    agent: economic_analysis_agent
+    command: "python -m scripts.calculate_indicators"
+    depends_on: [validate_data]
+    outputs: [dashboard/public/data/indicators.json, outputs/tables/summary.csv]
+    acceptance: "Indicadores trazables, unidades correctas e interpretación revisada."
+    human_gate: true
+
+  estimate_model:
+    agent: econometric_agent
+    command: "python -m scripts.econometric_model"
+    depends_on: [validate_data]
+    outputs: [outputs/tables/econometric_results.json]
+    acceptance: "Método justificado, supuestos reportados e interpretación no causal salvo identificación."
+    human_gate: true
+
+  build_dashboard:
+    agent: visualization_agent
+    command: "npm --prefix dashboard run build"
+    depends_on: [calculate_indicators]
+    outputs: [dashboard/.next]
+    acceptance: "Compila; filtros, fuentes, fechas e interpretaciones son visibles."
+    human_gate: true
+
+  generate_report:
+    agent: report_agent
+    command: "python -m scripts.generate_report"
+    depends_on: [calculate_indicators, estimate_model]
+    outputs: [outputs/reports/informe_final.pdf]
+    acceptance: "PDF reproducible de 12–20 páginas, coherente con datos y dashboard."
+    human_gate: true
+
+  audit_release:
+    agent: audit_agent
+    command: "python -m scripts.audit_project"
+    depends_on: [build_dashboard, generate_report]
+    outputs: [outputs/logs/audit_report.json]
+    acceptance: "Cero bloqueos; enlaces y evidencia humana verificados."
+    human_gate: true
