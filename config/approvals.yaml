@@ -1,0 +1,56 @@
+approvals:
+  approve_design:
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: "Aprobado tal cual: problema, pregunta, países (ECU/COL/PER/CRI), periodo 2014-2024, indicadores e hipótesis H1-H3 sin cambios."
+  identify_sources:
+    status: "approved"
+    approved_by: "Vinicio Arcos"
+    approved_at: "2026-07-24"
+    notes: >-
+      world_bank_wdi verificada (status: verified) para los 4 indicadores
+      aprobados en el diseño; es la única fuente que alimenta el pipeline
+      automatizado (scripts.download_data). BCE, INEC y UNODC quedan como
+      candidatas/contextuales con URLs actualizadas; national_security_ecuador
+      queda pending_identification, sin bloquear el pipeline principal.
+  collect_data:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  clean_data:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  validate_data:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  calculate_indicators:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  estimate_model:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  build_dashboard:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  generate_report:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""
+  audit_release:
+    status: "pending"
+    approved_by: null
+    approved_at: null
+    notes: ""

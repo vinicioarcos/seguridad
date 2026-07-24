@@ -1,0 +1,90 @@
+sources:
+  - id: world_bank_wdi
+    name: "World Development Indicators"
+    institution: "Banco Mundial"
+    url: "https://api.worldbank.org/v2"
+    variables:
+      - code: "VC.IHR.PSRC.P5"
+        name: "Homicidios intencionales"
+        unit: "por 100.000 habitantes"
+      - code: "NY.GDP.MKTP.KD.ZG"
+        name: "Crecimiento del PIB real"
+        unit: "% anual"
+      - code: "NE.GDI.FTOT.ZS"
+        name: "Formación bruta de capital fijo"
+        unit: "% del PIB"
+      - code: "BX.KLT.DINV.WD.GD.ZS"
+        name: "Entradas netas de inversión extranjera directa"
+        unit: "% del PIB"
+    frequency: "anual"
+    consultation_date: "2026-07-24"
+    license: "CC BY 4.0; verificar condiciones vigentes antes de publicar"
+    status: "verified"
+    verified_by: "Vinicio Arcos"
+    verification_evidence: >-
+      API consultada en vivo para VC.IHR.PSRC.P5, NY.GDP.MKTP.KD.ZG,
+      NE.GDI.FTOT.ZS y BX.KLT.DINV.WD.GD.ZS, países ECU;COL;PER;CRI,
+      periodo 2014:2024. Respuesta confirma etiqueta de indicador y unidad
+      declaradas en config/sources.yaml. Homicidios 2024 llega null en varios
+      países por rezago normal de publicación del Banco Mundial.
+
+  - id: bce
+    name: "Información Estadística Mensual"
+    institution: "Banco Central del Ecuador"
+    url: "https://www.bce.fin.ec/estadisticas-economicas/"
+    variables: []
+    frequency: "según indicador"
+    consultation_date: null
+    license: "verificar condiciones de uso"
+    status: "candidate"
+    verified_by: null
+    verification_evidence: null
+
+  - id: inec
+    name: "Ecuador en Cifras"
+    institution: "Instituto Nacional de Estadística y Censos"
+    url: "https://www.ecuadorencifras.gob.ec/"
+    variables: []
+    frequency: "según operación estadística"
+    consultation_date: null
+    license: "verificar condiciones de uso"
+    status: "candidate"
+    verified_by: null
+    verification_evidence: null
+
+  - id: unodc
+    name: "Data Portal: Intentional Homicide"
+    institution: "Oficina de las Naciones Unidas contra la Droga y el Delito"
+    url: "https://data.unodc.org/"
+    variables:
+      - code: "intentional_homicide_rate"
+        name: "Tasa de homicidios intencionales"
+        unit: "por 100.000 habitantes"
+    frequency: "anual"
+    consultation_date: null
+    license: "verificar condiciones de uso y metadatos"
+    status: "candidate"
+    verified_by: null
+    verification_evidence: null
+
+  - id: national_security_ecuador
+    name: "Estadísticas oficiales de muertes violentas"
+    institution: "Ministerio del Interior / Policía Nacional / INEC"
+    url: ""
+    variables:
+      - code: "violent_deaths"
+        name: "Muertes violentas y/o homicidios según definición institucional"
+        unit: "número y tasa"
+    frequency: "mensual o anual"
+    consultation_date: null
+    license: "verificar"
+    status: "pending_identification"
+    verified_by: null
+    verification_evidence: null
+
+source_rules:
+  - "Cambiar status a verified solo después de abrir la fuente y comprobar variable, unidad y periodicidad."
+  - "Registrar consultation_date en formato YYYY-MM-DD."
+  - "No usar URLs generadas por IA sin comprobación humana."
+  - "Conservar el archivo original o la consulta exacta en data/raw."
+  - "Documentar diferencias entre homicidio intencional, muerte violenta y delitos denunciados."

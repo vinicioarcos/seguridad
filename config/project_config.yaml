@@ -1,0 +1,91 @@
+project:
+  name: "Análisis del contexto económico nacional y global"
+  course: "Análisis del Contexto Nacional y Global"
+  program: "Economía"
+  level: "Octavo semestre"
+  team: []
+  repository_url: ""
+  dashboard_url: ""
+  report_url: ""
+
+research_design:
+  status: "approved"
+  title: "Seguridad y desempeño económico en Ecuador: evidencia comparada con Colombia, Perú y Costa Rica"
+  topic: "Seguridad y desempeño económico"
+  problem: >-
+    El incremento de la violencia criminal en Ecuador puede elevar costos de
+    operación, reducir inversión, alterar decisiones de localización y afectar
+    el crecimiento; sin embargo, su evolución y asociación con indicadores
+    económicos debe verificarse con datos comparables y sin atribuir causalidad
+    automática.
+  question: >-
+    ¿Cómo se relaciona la evolución de la inseguridad con el crecimiento, la
+    inversión y los flujos de inversión extranjera directa de Ecuador, en
+    comparación con Colombia, Perú y Costa Rica, durante 2014–2024?
+  general_objective: >-
+    Analizar la relación entre inseguridad y desempeño económico de Ecuador en
+    perspectiva comparada con Colombia, Perú y Costa Rica durante 2014–2024.
+  specific_objectives:
+    - "Describir la evolución de la tasa de homicidios intencionales en los cuatro países."
+    - "Comparar crecimiento del PIB, formación bruta de capital e inversión extranjera directa."
+    - "Estimar asociaciones contemporáneas y rezagadas mediante modelos exploratorios de panel."
+    - "Identificar riesgos, oportunidades y limitaciones para la interpretación del caso ecuatoriano."
+  countries:
+    - ECU
+    - COL
+    - PER
+    - CRI
+  country_names:
+    ECU: "Ecuador"
+    COL: "Colombia"
+    PER: "Perú"
+    CRI: "Costa Rica"
+  start_year: 2014
+  end_year: 2024
+  frequency: "annual"
+  security_indicator: "VC.IHR.PSRC.P5"
+  outcome_indicator: "NY.GDP.MKTP.KD.ZG"
+  indicators:
+    - code: "VC.IHR.PSRC.P5"
+      label: "Homicidios intencionales"
+      unit: "por 100.000 habitantes"
+      dimension: "security"
+    - code: "NY.GDP.MKTP.KD.ZG"
+      label: "Crecimiento del PIB real"
+      unit: "% anual"
+      dimension: "economic_performance"
+    - code: "NE.GDI.FTOT.ZS"
+      label: "Formación bruta de capital fijo"
+      unit: "% del PIB"
+      dimension: "economic_performance"
+    - code: "BX.KLT.DINV.WD.GD.ZS"
+      label: "Entradas netas de inversión extranjera directa"
+      unit: "% del PIB"
+      dimension: "economic_performance"
+  interpretation_scope: "descriptive_and_exploratory_non_causal"
+  hypotheses:
+    - "H1: mayores tasas de homicidio se asocian con menor crecimiento económico."
+    - "H2: mayores tasas de homicidio se asocian con menor formación de capital."
+    - "H3: mayores tasas de homicidio se asocian con menores entradas netas de IED."
+  limitations:
+    - "La tasa de homicidios aproxima solo una dimensión de la inseguridad."
+    - "Existen rezagos de publicación y posibles revisiones estadísticas."
+    - "Cuatro países y once años ofrecen potencia limitada para inferencia."
+    - "Las asociaciones estimadas no identifican por sí solas efectos causales."
+
+quality:
+  require_human_approval: true
+  minimum_comparators: 3
+  allow_unverified_sources: false
+  raw_data_immutable: true
+  missing_value_strategy: "report_and_decide"
+  outlier_strategy: "flag_do_not_delete"
+  minimum_country_year_coverage: 0.70
+
+paths:
+  raw_data: "data/raw/world_bank.json"
+  processed_data: "data/processed/indicators.csv"
+  metadata: "data/metadata/download_metadata.json"
+  validation_report: "outputs/logs/validation_report.json"
+  econometric_results: "outputs/tables/econometric_results.json"
+  dashboard_data: "dashboard/public/data/indicators.json"
